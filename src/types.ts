@@ -1,14 +1,16 @@
 import { CSSProperties, ReactChild, ReactNode } from "react";
-interface KakaoError {
+export interface KakaoError {
   error: string;
   error_description: string;
 }
 
-interface LoginResponse {
+export interface LoginResponse {
   /** 토큰 타입, bearer 로 고정 */
   token_type: string;
   /** 사용자 액세스 토큰 값 */
   access_token: string;
+  /** OIDC 토큰 값 */
+  id_token?: string;
   /** 액세스 토큰 만료 시간(초) */
   expires_in: string;
   /** 사용자 리프레시 토큰 값 */
@@ -71,7 +73,7 @@ interface KakaoAccount {
   ci: string;
 }
 
-interface UserProfile {
+export interface UserProfile {
   /** 회원번호 */
   id: number;
   /** 카카오계정 정보 */
